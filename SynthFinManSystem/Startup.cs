@@ -50,6 +50,9 @@ namespace SynthFinManSystem
             {
                 endpoints.MapControllerRoute(
                     name: "default",
+                    pattern: "{controller=Login}/{action=Index}/{id?}");
+                endpoints.MapControllerRoute(
+                    name: "home",
                     pattern: "{controller=Home}/{action=Index}/{id?}");
             });
         }
