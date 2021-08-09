@@ -1,0 +1,110 @@
+﻿@{
+    Layout = null;
+}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Test</title>
+    <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@300;400;600;700;800&display=swap" rel="stylesheet">
+    <link href="~/lib/bootstrap/css/bootstrap.min.css" rel="stylesheet" />
+    <link href="~/lib/font-awesome/css/all.min.css" rel="stylesheet" />
+    <link href="~/lib/bootstrap-icons/font/bootstrap-icons.min.css" rel="stylesheet" />
+    <link rel="stylesheet" href="~/css/app.css" />
+</head>
+<body>
+    <div ng-app="appTest" ng-controller="LoginController" ng-init="init()">
+        <header>
+            <nav class="navbar navbar-expand-sm navbar-light bg-light-primary border-bottom mb-3">
+                <div class="container">
+                    <h3>Synthentic Financial Manager System For Fraud Transactionss</h3>
+                    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target=".navbar-collapse" aria-controls="navbarSupportedContent"
+                            aria-expanded="false" aria-label="Toggle navigation">
+                        <span class="navbar-toggler-icon"></span>
+                    </button>
+                </div>
+            </nav>
+        </header>
+        <div class="container">
+            <toaster-container></toaster-container>
+            <main role="main" class="pb-3">
+                <div id="auth">
+                    <div class="row h-100">
+                        <div class="col-lg-5 col-12">
+                            <div id="auth-left">
+                                <h1 class="auth-title">Log in.</h1>
+                                <br />
+                                <form>
+                                    <div class="form-group position-relative has-icon-left mb-4">
+                                        <input type="text" class="form-control form-control-xl" ng-model="username" placeholder="Username">
+                                        <div class="form-control-icon">
+                                            <i class="bi bi-person"></i>
+                                        </div>
+                                    </div>
+                                    <div class="form-group position-relative has-icon-left mb-4">
+                                        <input type="password" class="form-control form-control-xl" ng-model="password" placeholder="Password">
+                                        <div class="form-control-icon">
+                                            <i class="bi bi-shield-lock"></i>
+                                        </div>
+                                    </div>
+                                    <button class="btn btn-primary btn-block btn-lg shadow-lg mt-5" ng-click="sendLogin()">Log in</button>
+                                </form>
+                            </div>
+                        </div>
+                        <div class="col-lg-7 d-none d-lg-block">
+                            <div id="auth-right">
+
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!-- toasters -->
+                <div class="position-fixed bottom-0 end-0 p-3" style="z-index: 11">
+                    <div id="toastWarning" class="toast hide align-items-center text-white bg-warning border-0" role="alert" aria-live="assertive" aria-atomic="true">
+                        <div class="d-flex">
+                            <div id="messageWarning" class="toast-body">
+                                &nbsp;
+                            </div>
+                            <button type="button" class="btn-close btn-close-white me-2 m-auto" data-bs-dismiss="toast" aria-label="Close"></button>
+                        </div>
+                    </div>
+                </div>
+                <div class="position-fixed bottom-0 end-0 p-3" style="z-index: 11">
+                    <div id="toastError" class="toast hide align-items-center text-white bg-danger border-0" role="alert" aria-live="assertive" aria-atomic="true">
+                        <div class="d-flex">
+                            <div id="messageError" class="toast-body">
+                                &nbsp;
+                            </div>
+                            <button type="button" class="btn-close btn-close-white me-2 m-auto" data-bs-dismiss="toast" aria-label="Close"></button>
+                        </div>
+                    </div>
+                </div>
+                <!-- Modal -->
+                <div class="modal fade" id="modalWindow" tabindex="-1" aria-labelledby="labelModal" aria-hidden="true">
+                    <div class="modal-dialog">
+                        <div class="modal-content">
+                            <div class="modal-header">
+                                <h5 class="modal-title" id="labelModal">Procesing</h5>
+                            </div>
+                            <div class="modal-body">
+                                Please wait
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </main>
+        </div>
+    </div>
+    <script src="~/lib/jquery/dist/jquery.min.js"></script>
+    <script src="~/lib/bootstrap/js/bootstrap.min.js"></script>
+    <script src="~/lib/font-awesome/js/all.min.js"></script>
+    <script src="~/lib/angular.js/angular.min.js"></script>
+    <script src="~/lib/angular-animate/angular-animate.min.js"></script>
+    <script src="~/js/app.js" asp-append-version="true"></script>
+    <script src="~/components/loading-panel.js"></script>
+    <script src="~/servicesjs/ajaxrequest-service.js"></script>
+    <script src="~/servicesjs/account-service.js"></script>
+    <script src="~/controllersjs/login-controller.js"></script>
+</body>
+</html>

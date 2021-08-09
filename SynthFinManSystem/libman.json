@@ -15,16 +15,16 @@
       "destination": "wwwroot/lib/bootstrap/"
     },
     {
-      "library": "mdb-ui-kit@3.9.0",
-      "destination": "wwwroot/lib/mdb-ui-kit/"
-    },
-    {
       "library": "font-awesome@5.15.4",
       "destination": "wwwroot/lib/font-awesome/"
     },
     {
       "library": "bootstrap-icons@1.5.0",
       "destination": "wwwroot/lib/bootstrap-icons/"
+    },
+    {
+      "library": "angular-animate@1.8.2",
+      "destination": "wwwroot/lib/angular-animate/"
     }
   ]
 }
