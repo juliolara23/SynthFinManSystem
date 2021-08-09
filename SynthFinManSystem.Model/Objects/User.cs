@@ -24,6 +24,11 @@ namespace SynthFinManSystem.Model.Objects
         [MaxLength(200)]
         public string Name { get; set; }
 
+        [MaxLength(1)]
+        public string IdRole { get; set; }
+
+        public virtual Role RoleUser { get; set; }
+
         [NotMapped]
         public bool Valid { get; set; }
     }

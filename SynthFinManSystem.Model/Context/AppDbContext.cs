@@ -11,8 +11,24 @@ namespace SynthFinManSystem.Model.Context
         }
 
         #region DbSet Definition
+
         public DbSet<User> Users { get; set; }
+        public DbSet<Role> Roles { get; set; }
+
         #endregion
 
+        protected override void OnModelCreating(ModelBuilder modelBuilder)
+        {
+
+            #region Foreing keys
+
+            modelBuilder.Entity<User>()
+                .HasOne(x => x.RoleUser)
+                .WithMany()
+                .HasForeignKey(y => y.IdRole);
+
+            #endregion
+
+        }
     }
 }

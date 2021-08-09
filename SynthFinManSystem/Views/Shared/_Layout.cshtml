@@ -14,7 +14,7 @@
     <div ng-app="appTest">
         <header>
             <nav class="navbar navbar-expand-sm navbar-light bg-light-primary border-bottom mb-3">
-                <div class="container">
+                <div class="container" ng-controller="HomeController">
                     <h3>Synthentic Financial Manager System For Fraud Transactionss</h3>
                     <button class="navbar-toggler" type="button" data-toggle="collapse" data-target=".navbar-collapse" aria-controls="navbarSupportedContent"
                             aria-expanded="false" aria-label="Toggle navigation">
@@ -22,18 +22,18 @@
                     </button>
                     <div class="navbar-collapse collapse d-sm-inline-flex justify-content-between">
                         <ul class="navbar-nav flex-grow-1">
-                                <li class="nav-item">
-                                    <a class="nav-link text-dark" asp-area="" asp-controller="Home" asp-action="Index">Home</a>
-                                </li>
-                                <li class="nav-item">
-                                    <a class="nav-link text-dark" asp-area="" asp-controller="Home" asp-action="Register">Register transactions</a>
-                                </li>
-                                <li class="nav-item">
-                                    <a class="nav-link text-dark" asp-area="" asp-controller="Home" asp-action="Search">Search transactions</a>
-                                </li>
-                                <li class="nav-item">
-                                    <a class="nav-link text-dark" asp-area="" asp-controller="Home" asp-action="Mark">Mark transactions</a>
-                                </li>
+                            <li class="nav-item">
+                                <a class="nav-link text-dark" asp-area="" asp-controller="Home" asp-action="Index">Home</a>
+                            </li>
+                            <li class="nav-item" ng-show="validateReg()">
+                                <a class="nav-link text-dark" asp-area="" asp-controller="Home" asp-action="Register">Register transactions</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link text-dark" asp-area="" asp-controller="Home" asp-action="Search">Search transactions</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link text-dark" asp-area="" asp-controller="Home" asp-action="Mark">Mark transactions</a>
+                            </li>
                         </ul>
                     </div>
                 </div>
@@ -50,8 +50,10 @@
     <script src="~/lib/font-awesome/js/all.min.js"></script>
     <script src="~/lib/angular.js/angular.min.js"></script>
     <script src="~/lib/angular-animate/angular-animate.min.js"></script>
+    <script src="~/lib/angular-cookies/angular-cookies.min.js"></script>
     <script src="~/js/app.js" asp-append-version="true"></script>
     <script src="~/servicesjs/ajaxrequest-service.js"></script>
+    <script src="~/controllersjs/home-controller.js"></script>
     @await RenderSectionAsync("Scripts", required: false)
 </body>
 </html>

@@ -87,5 +87,12 @@ namespace SynthFinManSystem.Web.Controllers
                 return StatusCode(Microsoft.AspNetCore.Http.StatusCodes.Status500InternalServerError);
             }
         }
+
+        public virtual async System.Threading.Tasks.Task<ActionResult> CloseSessionAsync()
+        {
+            await HttpContext.SignOutAsync(CookieAuthenticationDefaults.AuthenticationScheme);
+            HttpContext.Session.SetObject("UsuarioApp", null);
+            return RedirectToAction("Login", "Account");
+        }
     }
 }

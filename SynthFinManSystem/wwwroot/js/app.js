@@ -6,5 +6,5 @@
     'use strict';
 
     angular
-        .module('appTest', ['ngAnimate']);
+        .module('appTest', ['ngAnimate','ngCookies']);
 })();

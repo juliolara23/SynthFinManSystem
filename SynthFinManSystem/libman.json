@@ -25,6 +25,10 @@
     {
       "library": "angular-animate@1.8.2",
       "destination": "wwwroot/lib/angular-animate/"
+    },
+    {
+        "library": "angular-cookies@1.8.2",
+        "destination": "wwwroot/lib/angular-cookies/"
     }
   ]
 }

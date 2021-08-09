@@ -3,13 +3,14 @@
     .controller("LoginController", LoginController);
 
 LoginController.$inject = [
-    "$rootScope", "$scope", "$window", "$http", "AccountService"
+    "$rootScope", "$scope", "$window", "$http", "$cookies", "AccountService"
 ];
 
 function LoginController($rootScope,
     $scope,
     $window,
     $http,
+    $cookies,
     AccountService) {
     "use strict";
 
@@ -41,10 +42,10 @@ function LoginController($rootScope,
                             "An error occurred while executing the operation";
                         new bootstrap.Toast(document.querySelector("#toastError")).show();
                     } else {
-                        console.log(response);
                         if (response.valid) {
-                            $cookies.putObject('userApp', response);
-                            $rootScope.userApp = response;
+                            $cookies.putObject('userApp', response, {
+                                path: '/'
+                            });
                             $window.location.href = '/';
 
                         } else {
