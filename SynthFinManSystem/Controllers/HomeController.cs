@@ -25,7 +25,17 @@ namespace SynthFinManSystem.Controllers
             return View();
         }
 
-        public IActionResult Privacy()
+        public IActionResult Register()
+        {
+            return View();
+        }
+
+        public IActionResult Search()
+        {
+            return View();
+        }
+
+        public IActionResult Mark()
         {
             return View();
         }
