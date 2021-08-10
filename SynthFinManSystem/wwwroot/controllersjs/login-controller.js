@@ -18,7 +18,6 @@ function LoginController($rootScope,
     $scope.init = function() {
         $scope.username = "";
         $scope.password = "";
-        $scope.modalWindow = new bootstrap.Modal(document.querySelector("#modalWindow"));
     };
 
     $scope.sendLogin = function() {

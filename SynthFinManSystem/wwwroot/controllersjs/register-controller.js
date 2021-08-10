@@ -26,7 +26,7 @@ function RegisterController($rootScope,
             nameOrig: "",
             nameDest: "",
             transactionDate: undefined,
-            IsFraud: false
+            isFraud: false
         }
     };
 

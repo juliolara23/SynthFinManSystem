@@ -1,5 +1,40 @@
-﻿@*
-    For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
-*@
-@{
-}
+﻿<div class="container" ng-controller="SearchController" ng-init="init()">
+    <div class="row">
+        <div class="col-md-12 col-12">
+            <div class="form-group">
+                <label for="type">Search transactions by</label>
+                <select id="type" name="type" ng-model="searchBy" class="form-select">
+                    <option value="f">Is fraud</option>
+                    <option value="r">Recipient Name</option>
+                    <option value="d">Transaction date</option>
+                </select>
+            </div>
+        </div>
+        <div class="col-md-12 col-12" ng-show="isNameDest()">
+            <input type="text" id="nameDest" ng-model="nameDest" class="form-control" name="nameDest">
+        </div>
+        <div class="col-md-12 col-12" ng-show="isTransactDate()">
+            <datepicker date-format="yyyy-MM-dd">
+                <input type="text" id="transactionDate" name="transactionDate" ng-model="transactionDate" class="form-control" />
+            </datepicker>
+        </div>
+        <div class="col-md-12 col-12">
+            <div style="height: 10px;">
+                &nbsp;
+            </div>
+        </div>
+        <div class="col-md-12 col-12">
+            <button type="submit" class="btn btn-primary me-1 mb-1" ng-click="search()">Search</button>
+        </div>
+        <div class="col-md-12 col-12">
+            <div style="height: 10px;">
+                &nbsp;
+            </div>
+        </div>
+    </div>
+    <div class="row">
+        <div id="uigrid-transactions" ui-grid-resize-columns ui-grid="gridTransactions" ui-grid-pagination class="grid"></div>
+    </div>
+    <script src="~/servicesjs/search-service.js"></script>
+    <script src="~/controllersjs/search-controller.js"></script>
+</div>

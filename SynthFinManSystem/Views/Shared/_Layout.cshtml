@@ -9,6 +9,7 @@
     <link href="~/lib/font-awesome/css/all.min.css" rel="stylesheet" />
     <link href="~/lib/bootstrap-icons/font/bootstrap-icons.min.css" rel="stylesheet" />
     <link href="~/lib/angularjs-datepicker/angular-datepicker.min.css" rel="stylesheet" />
+    <link href="~/lib/angular-ui-grid/ui-grid.css" rel="stylesheet" />
     <link href="~/lib/sweetalert2/dist/sweetalert2.min.css" rel="stylesheet" />
     <link rel="stylesheet" href="~/css/app.css" />
 </head>
@@ -34,7 +35,7 @@
                                 <a class="nav-link text-dark" asp-area="" asp-controller="Home" asp-action="Search">Search transactions</a>
                             </li>
                             <li class="nav-item" ng-show="validateMark()">
-                                <a class="nav-link text-dark" asp-area="" asp-controller="Home" asp-action="Mark">Mark transactions</a>
+                                <a class="nav-link text-dark" asp-area="" asp-controller="Home" asp-action="Search">Mark transactions</a>
                             </li>
                             <li class="nav-item">
                                 <a class="nav-link text-dark" asp-area="" asp-controller="Account" asp-action="CloseSession">Log out</a>
@@ -52,6 +53,7 @@
         <script src="~/lib/angular-cookies/angular-cookies.min.js"></script>
         <script src="~/lib/sweetalert2/dist/sweetalert2.all.min.js"></script>
         <script src="~/lib/angularjs-datepicker/angular-datepicker.min.js"></script>
+        <script src="~/lib/angular-ui-grid/ui-grid.min.js"></script>
         <script src="~/js/app.js" asp-append-version="true"></script>
         <script src="~/servicesjs/ajaxrequest-service.js"></script>
         <script src="~/controllersjs/home-controller.js"></script>

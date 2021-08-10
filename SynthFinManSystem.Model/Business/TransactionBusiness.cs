@@ -23,7 +23,7 @@ namespace SynthFinManSystem.Model.Business
         {
             try
             {
-                return _context.Transactions.Where(x => x.NameDest.Trim().ToUpper().Equals(nameDest.Trim().ToUpper())).ToList();
+                return _context.Transactions.Where(x => x.NameDest.Trim().ToUpper().Contains(nameDest.Trim().ToUpper())).ToList();
             }
             catch (Exception exception)
             {

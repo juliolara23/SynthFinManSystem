@@ -38,6 +38,10 @@
       "provider": "jsdelivr",
       "library": "sweetalert2@11.1.2",
       "destination": "wwwroot/lib/sweetalert2/"
+    },
+    {
+      "library": "angular-ui-grid@4.10.3",
+      "destination": "wwwroot/lib/angular-ui-grid/"
     }
   ]
 }
