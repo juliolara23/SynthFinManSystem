@@ -14,10 +14,26 @@ function HomeController($rootScope,
     "use strict";
 
     $scope.validateReg = function () {
-        console.log($cookies.getAll());
         var user = $cookies.getObject('userApp');
-        console.log(user);
-        if (user.role == "A" || user.role == "D") {
+        if (user.idRole == "A" || user.idRole == "D") {
+            return true;
+        } else {
+            return false;
+        }
+    };
+
+    $scope.validateSearch = function () {
+        var user = $cookies.getObject('userApp');
+        if (user.idRole == "A" || user.idRole == "D") {
+            return true;
+        } else {
+            return false;
+        }
+    };
+
+    $scope.validateMark = function () {
+        var user = $cookies.getObject('userApp');
+        if (user.idRole == "M" || user.idRole == "D") {
             return true;
         } else {
             return false;

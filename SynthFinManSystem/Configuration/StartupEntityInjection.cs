@@ -16,6 +16,7 @@ namespace SynthFinManSystem.Web.Configuration
         {
             #region Model Injection
             services.AddScoped<IUserBusiness,UserBusiness> ();
+            services.AddScoped<ITransactionBusiness, TransactionBusiness>();
             #endregion
 
             #region Web Injection

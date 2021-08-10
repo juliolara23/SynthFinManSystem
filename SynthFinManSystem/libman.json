@@ -27,8 +27,17 @@
       "destination": "wwwroot/lib/angular-animate/"
     },
     {
-        "library": "angular-cookies@1.8.2",
-        "destination": "wwwroot/lib/angular-cookies/"
+      "library": "angular-cookies@1.8.2",
+      "destination": "wwwroot/lib/angular-cookies/"
+    },
+    {
+      "library": "angularjs-datepicker@2.1.23",
+      "destination": "wwwroot/lib/angularjs-datepicker/"
+    },
+    {
+      "provider": "jsdelivr",
+      "library": "sweetalert2@11.1.2",
+      "destination": "wwwroot/lib/sweetalert2/"
     }
   ]
 }

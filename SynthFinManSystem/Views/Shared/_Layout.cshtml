@@ -8,6 +8,8 @@
     <link href="~/lib/bootstrap/css/bootstrap.min.css" rel="stylesheet" />
     <link href="~/lib/font-awesome/css/all.min.css" rel="stylesheet" />
     <link href="~/lib/bootstrap-icons/font/bootstrap-icons.min.css" rel="stylesheet" />
+    <link href="~/lib/angularjs-datepicker/angular-datepicker.min.css" rel="stylesheet" />
+    <link href="~/lib/sweetalert2/dist/sweetalert2.min.css" rel="stylesheet" />
     <link rel="stylesheet" href="~/css/app.css" />
 </head>
 <body>
@@ -28,32 +30,37 @@
                             <li class="nav-item" ng-show="validateReg()">
                                 <a class="nav-link text-dark" asp-area="" asp-controller="Home" asp-action="Register">Register transactions</a>
                             </li>
-                            <li class="nav-item">
+                            <li class="nav-item" ng-show="validateSearch()">
                                 <a class="nav-link text-dark" asp-area="" asp-controller="Home" asp-action="Search">Search transactions</a>
                             </li>
-                            <li class="nav-item">
+                            <li class="nav-item" ng-show="validateMark()">
                                 <a class="nav-link text-dark" asp-area="" asp-controller="Home" asp-action="Mark">Mark transactions</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link text-dark" asp-area="" asp-controller="Account" asp-action="CloseSession">Log out</a>
                             </li>
                         </ul>
                     </div>
                 </div>
             </nav>
         </header>
+        <script src="~/lib/jquery/dist/jquery.min.js"></script>
+        <script src="~/lib/bootstrap/js/bootstrap.min.js"></script>
+        <script src="~/lib/font-awesome/js/all.min.js"></script>
+        <script src="~/lib/angular.js/angular.min.js"></script>
+        <script src="~/lib/angular-animate/angular-animate.min.js"></script>
+        <script src="~/lib/angular-cookies/angular-cookies.min.js"></script>
+        <script src="~/lib/sweetalert2/dist/sweetalert2.all.min.js"></script>
+        <script src="~/lib/angularjs-datepicker/angular-datepicker.min.js"></script>
+        <script src="~/js/app.js" asp-append-version="true"></script>
+        <script src="~/servicesjs/ajaxrequest-service.js"></script>
+        <script src="~/controllersjs/home-controller.js"></script>
+        @await RenderSectionAsync("Scripts", required: false)
         <div class="container">
             <main role="main" class="pb-3">
                 @RenderBody()
             </main>
         </div>
     </div>
-    <script src="~/lib/jquery/dist/jquery.min.js"></script>
-    <script src="~/lib/bootstrap/js/bootstrap.min.js"></script>
-    <script src="~/lib/font-awesome/js/all.min.js"></script>
-    <script src="~/lib/angular.js/angular.min.js"></script>
-    <script src="~/lib/angular-animate/angular-animate.min.js"></script>
-    <script src="~/lib/angular-cookies/angular-cookies.min.js"></script>
-    <script src="~/js/app.js" asp-append-version="true"></script>
-    <script src="~/servicesjs/ajaxrequest-service.js"></script>
-    <script src="~/controllersjs/home-controller.js"></script>
-    @await RenderSectionAsync("Scripts", required: false)
 </body>
 </html>

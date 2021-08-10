@@ -23,45 +23,53 @@ function LoginController($rootScope,
 
     $scope.sendLogin = function() {
         if ($scope.username == "") {
-            document.querySelector("#messageWarning").innerHTML = "The username cannot be empty";
-            new bootstrap.Toast(document.querySelector("#toastWarning")).show();
+            Swal.fire({
+                toast: true,
+                icon: "warning",
+                title: "The username cannot be empty"
+            });
         } else if ($scope.password == "") {
-            document.querySelector("#messageWarning").innerHTML = "The password cannot be empty";
-            new bootstrap.Toast(document.querySelector("#toastWarning")).show();
+            Swal.fire({
+                toast: true,
+                icon: "warning",
+                title: "The password cannot be empty"
+            });
         } else {
-            $scope.modalWindow.toggle();
+            $scope.swal = Swal.fire({
+                icon: "info",
+                title: "Processing, please wait",
+                didOpen: () => {
+                    Swal.showLoading();
+                }
+            });
             var data = {
                 userName: $scope.username,
                 password: $scope.password
             };
             var response = AccountService.verificarInfoAccesoAsync(data);
             response.then(function (response) {
-                    $scope.modalWindow.toggle();
-                    if (response.code == 500) {
-                        document.querySelector("#messageError").innerHTML =
-                            "An error occurred while executing the operation";
-                        new bootstrap.Toast(document.querySelector("#toastError")).show();
-                    } else {
-                        if (response.valid) {
+                    $scope.swal.close();
+                    if (response.valid) {
                             $cookies.putObject('userApp', response, {
                                 path: '/'
                             });
                             $window.location.href = '/';
 
                         } else {
-                            document.querySelector("#messageError").innerHTML =
-                                "the username or password supplied is incorrect";
-                            new bootstrap.Toast(document.querySelector("#toastError")).show();
+                            Swal.fire({
+                                toast: true,
+                                icon: "error",
+                                title: "the username or password supplied is incorrect"
+                            });
                         }
-                    }
-                    
-
-                },
+                    },
                 function (response) {
-                    $scope.modalWindow.toggle();
-                    document.querySelector("#messageError").innerHTML =
-                        "An error occurred while executing the operation";
-                    new bootstrap.Toast(document.querySelector("#toastError")).show();
+                    $scope.swal.close();
+                    Swal.fire({
+                        toast: true,
+                        icon: "error",
+                        title: "An error occurred while executing the operation"
+                    });
                 });
         }
     };

@@ -1,5 +1,50 @@
-﻿@*
-    For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
-*@
-@{
-}
+﻿<form>
+    <div class="container" ng-controller="RegisterController" ng-init="init()">
+        <div class="row">
+            <div class="col-md-6 col-12">
+                <div class="form-group">
+                    <label for="type">Type</label>
+                    <select id="type" name="type" ng-model="transaction.type" class="form-select">
+                        <option value="CASH-IN">CASH-IN</option>
+                        <option value="CASH-OUT">CASH-OUT</option>
+                        <option value="DEBIT">DEBIT</option>
+                        <option value="PAYMENT">PAYMENT</option>
+                        <option value="TRANSFER">TRANSFER</option>
+                    </select>
+                </div>
+            </div>
+            <div class="col-md-6 col-12">
+                <div class="form-group">
+                    <label for="amount">Amount</label>
+                    <input type="number" id="amount" ng-model="transaction.amount" class="form-control" name="amount">
+                </div>
+            </div>
+            <div class="col-md-6 col-12">
+                <div class="form-group">
+                    <label for="nameOrig">Customer Name</label>
+                    <input type="text" id="nameOrig" ng-model="transaction.nameOrig" class="form-control" name="nameOrig">
+                </div>
+            </div>
+            <div class="col-md-6 col-12">
+                <div class="form-group">
+                    <label for="nameDest">Recipient Name</label>
+                    <input type="text" id="nameDest" ng-model="transaction.nameDest" class="form-control" name="nameDest">
+                </div>
+            </div>
+            <div class="col-md-6 col-12">
+                <div class="form-group">
+                    <label for="transactionDate">Transaction Date</label>
+                    <datepicker date-format="yyyy-MM-dd">
+                        <input type="text" id="transactionDate" name="transactionDate" ng-model="transaction.transactionDate" class="form-control" />
+                    </datepicker>
+                </div>
+            </div>
+            <div class="col-12 d-flex justify-content-end">
+                <button type="submit" class="btn btn-primary me-1 mb-1" ng-click="submit()">Submit</button>
+                <button type="reset" class="btn btn-light-secondary me-1 mb-1" ng-click="resetTransaction()">Reset</button>
+            </div>
+        </div>
+    </div>
+</form>
+<script src="~/servicesjs/register-service.js"></script>
+<script src="~/controllersjs/register-controller.js"></script>

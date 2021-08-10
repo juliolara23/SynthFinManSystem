@@ -6,5 +6,5 @@
     'use strict';
 
     angular
-        .module('appTest', ['ngAnimate','ngCookies']);
+        .module('appTest', ['ngAnimate', 'ngCookies', '720kb.datepicker']);
 })();

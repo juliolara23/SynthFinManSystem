@@ -14,7 +14,7 @@ namespace SynthFinManSystem.Model.Context
 
         public DbSet<User> Users { get; set; }
         public DbSet<Role> Roles { get; set; }
-
+        public DbSet<Transaction> Transactions { get; set; }
         #endregion
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
