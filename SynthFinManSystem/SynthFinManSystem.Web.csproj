@@ -17,4 +17,8 @@
     <ProjectReference Include="..\SynthFinManSystem.Model\SynthFinManSystem.Model.csproj" />
   </ItemGroup>
 
+  <ItemGroup>
+    <Folder Include="scripts\" />
+  </ItemGroup>
+
 </Project>
