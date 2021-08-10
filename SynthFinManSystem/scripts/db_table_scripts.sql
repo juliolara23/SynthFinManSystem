@@ -251,7 +251,7 @@ GO
 
 /* For security reasons the login is created disabled and with a random password. */
 /****** Object:  Login [web] app user ******/
-CREATE LOGIN [web] WITH PASSWORD=N'4WjDGKd7Yb+SLtAR3kyNmv5XrO6xRSj9Rtx46PlWzyo=', DEFAULT_DATABASE=[master], DEFAULT_LANGUAGE=[us_english], CHECK_EXPIRATION=OFF, CHECK_POLICY=ON
+CREATE LOGIN [web] WITH PASSWORD=N'webuser', DEFAULT_DATABASE=[master], DEFAULT_LANGUAGE=[us_english], CHECK_EXPIRATION=OFF, CHECK_POLICY=ON
 GO
 
 ALTER LOGIN [web] DISABLE
