@@ -21,6 +21,11 @@ namespace SynthFinManSystem.Web.Controllers
             _transactionBusiness = transactionBusiness;
         }
 
+        /// <summary>
+        /// Method to register a new transaction
+        /// </summary>
+        /// <param name="data">transaction</param>
+        /// <returns>none</returns>
         [HttpPost]
         public virtual ActionResult SaveTransaction([FromBody] JObject data)
         {

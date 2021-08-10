@@ -19,6 +19,12 @@ namespace SynthFinManSystem.Web.Business
             _userBusiness = userBusiness;
         }
 
+        /// <summary>
+        /// Method to validate a user
+        /// </summary>
+        /// <param name="userName">Username</param>
+        /// <param name="password">Password</param>
+        /// <returns>The validated user</returns>
         public User validateUser(string userName, string password)
         {
             try

@@ -20,6 +20,10 @@ namespace SynthFinManSystem.Web.Controllers
             _transactionBusiness = transactionBusiness;
         }
 
+        /// <summary>
+        /// Method to search a transaction marked as fraud
+        /// </summary>
+        /// <returns>Transactions list</returns>
         [HttpPost]
         public virtual ActionResult FindTransactionByUserIsFraud()
         {
@@ -33,6 +37,12 @@ namespace SynthFinManSystem.Web.Controllers
             }
         }
 
+
+        /// <summary>
+        /// Method to search transactions by recipient name
+        /// </summary>
+        /// <param name="data">Recipient name</param>
+        /// <returns>Transactions list</returns>
         [HttpPost]
         public virtual ActionResult FindTransactionByUserNameDest([FromBody] JObject data)
         {
@@ -47,6 +57,12 @@ namespace SynthFinManSystem.Web.Controllers
             }
         }
 
+
+        /// <summary>
+        /// Method to search transactions by date
+        /// </summary>
+        /// <param name="data">Transaction date</param>
+        /// <returns>Transactions list</returns>
         [HttpPost]
         public virtual ActionResult FindTransactionByTransactionDate([FromBody] JObject data)
         {
@@ -61,6 +77,11 @@ namespace SynthFinManSystem.Web.Controllers
             }
         }
 
+        /// <summary>
+        /// Method to update a existing transaction
+        /// </summary>
+        /// <param name="data">Transaction</param>
+        /// <returns>none</returns>
         [HttpPost]
         public virtual ActionResult UpdateTransaction([FromBody] JObject data)
         {

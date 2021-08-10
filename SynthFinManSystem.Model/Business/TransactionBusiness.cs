@@ -19,6 +19,11 @@ namespace SynthFinManSystem.Model.Business
             _context = context;
         }
 
+        /// <summary>
+        /// Method to search transactions by recipient name
+        /// </summary>
+        /// <param name="nameDest">Recipient name</param>
+        /// <returns>Transactions list</returns>
         public List<Transaction> FindTransactionByUserNameDest(string nameDest)
         {
             try
@@ -31,6 +36,10 @@ namespace SynthFinManSystem.Model.Business
             }
         }
 
+        /// <summary>
+        /// Method to search transactions marked as fraud
+        /// </summary>
+        /// <returns>Transactions list</returns>
         public List<Transaction> FindTransactionByUserIsFraud()
         {
             try
@@ -43,6 +52,11 @@ namespace SynthFinManSystem.Model.Business
             }
         }
 
+        /// <summary>
+        /// Method to search transactions by date
+        /// </summary>
+        /// <param name="transactionDate">Transaction date</param>
+        /// <returns>Transactions list</returns>
         public List<Transaction> FindTransactionByTransactionDate(DateTimeOffset transactionDate)
         {
             try
@@ -55,6 +69,10 @@ namespace SynthFinManSystem.Model.Business
             }
         }
 
+        /// <summary>
+        /// Method to save a new transaction
+        /// </summary>
+        /// <param name="transaction">Transaction</param>
         public void SaveTransaction(Transaction transaction)
         {
             try
@@ -68,6 +86,10 @@ namespace SynthFinManSystem.Model.Business
             }
         }
 
+        /// <summary>
+        /// Method to update a existing transaction
+        /// </summary>
+        /// <param name="transaction">Transaction</param>
         public void UpdateTransaction(Transaction transaction)
         {
             try

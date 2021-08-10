@@ -30,6 +30,11 @@ namespace SynthFinManSystem.Web.Controllers
             return View();
         }
 
+        /// <summary>
+        /// Method to validate log in info
+        /// </summary>
+        /// <param name="data">username and password</param>
+        /// <returns>validated user</returns>
         [AllowAnonymous]
         public virtual async System.Threading.Tasks.Task<ActionResult> VerificarInfoAccesoAsync([FromBody] JObject data)
         {
@@ -88,6 +93,10 @@ namespace SynthFinManSystem.Web.Controllers
             }
         }
 
+        /// <summary>
+        /// Method to close session
+        /// </summary>
+        /// <returns>Redirect to login page</returns>
         public virtual async System.Threading.Tasks.Task<ActionResult> CloseSessionAsync()
         {
             await HttpContext.SignOutAsync(CookieAuthenticationDefaults.AuthenticationScheme);

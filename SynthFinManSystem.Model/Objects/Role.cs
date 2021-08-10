@@ -16,6 +16,7 @@ namespace SynthFinManSystem.Model.Objects
         [Required]
         [MaxLength(1)]
         public string Id { get; set; }
+        /* ID roles values: D = Adminstrator, M = Manager, A = Assistant */
 
         [Required]
         [MaxLength(50)]

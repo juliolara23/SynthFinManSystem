@@ -19,6 +19,11 @@ namespace SynthFinManSystem.Model.Business
             _context = context;
         }
 
+        /// <summary>
+        /// Method to search a user using the username
+        /// </summary>
+        /// <param name="username">username</param>
+        /// <returns>User</returns>
         public User FindUserByUserName(string username)
         {
             try
